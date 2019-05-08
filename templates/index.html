@@ -1,0 +1,30 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Trafficking Risk Prediction{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="#">Trafficking Risk Prediction</a>
+        </div>
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form method="POST" action="">
+            <div class="row">
+                <div class="col-md-12">
+                <h3>To determine the trafficking risk,please enter the following:</h3>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>{{ form.sibsp.label }} {{ form.sibsp }}</p>
+            <p>{{ form.parch.label }} {{ form.parch }}</p>	           
+            <p>{{ form.countries.label }} {{ form.countries }}</p>
+            <br>
+            {{ form.submit() }}
+            {{ form.hidden_tag() }}
+        </div>
+    </div>
+</div>
+{% endblock %}
